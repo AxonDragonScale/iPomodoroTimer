@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var pomodoroViewModel: PomodoroViewModel
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Home()
+            .environmentObject(pomodoroViewModel)
+            
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(PomodoroViewModel())
     }
 }
